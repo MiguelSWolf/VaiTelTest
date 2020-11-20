@@ -1,0 +1,182 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "1jjsFkDUHB6NLaXw0Pj4qabygQA",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "BR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "vd07SyhStCBoTeV9n1Hkyx3MOk0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "8SbUC-UaAxE"
+      },
+      "snippet": {
+        "publishedAt": "2009-12-25T08:37:37Z",
+        "channelId": "UCJN4c_lZorb_0eyIP_tSS3A",
+        "title": "Guns N&#39; Roses - November Rain",
+        "description": "Music video by Guns N' Roses performing November Rain. YouTube view counts pre-VEVO: 6894036. (C) 1992 Guns N' Roses #VEVOCertified on June 24, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8SbUC-UaAxE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8SbUC-UaAxE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8SbUC-UaAxE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GunsNRosesVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-12-25T08:37:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "VG6ZjwHnGvOAhFSBHa_cukMR-ZU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1w7OgIMMRc4"
+      },
+      "snippet": {
+        "publishedAt": "2009-12-25T06:54:53Z",
+        "channelId": "UCJN4c_lZorb_0eyIP_tSS3A",
+        "title": "Guns N&#39; Roses - Sweet Child O&#39; Mine (Official Music Video)",
+        "description": "REMASTERED IN HD! OVER A BILLION VIEWS! #AppetiteForDestruction: The Debut Album, Remastered and Expanded. Available now as Box Set, Super ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1w7OgIMMRc4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1w7OgIMMRc4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1w7OgIMMRc4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GunsNRosesVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-12-25T06:54:53Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9oLomoohI3Bv7h_WLo0AmBYxyYc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zRIbf6JqkNc"
+      },
+      "snippet": {
+        "publishedAt": "2009-10-09T03:14:31Z",
+        "channelId": "UCJN4c_lZorb_0eyIP_tSS3A",
+        "title": "Guns N&#39; Roses - Don&#39;t Cry",
+        "description": "Music video by Guns N' Roses performing Don't Cry (Original Version). (C) 1991 Guns N' Roses under exclusive license to Geffen Records.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zRIbf6JqkNc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zRIbf6JqkNc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zRIbf6JqkNc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GunsNRosesVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-10-09T03:14:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "bMotftmvERi7-1O-n-McaDL1d7I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Rbm6GXllBiw"
+      },
+      "snippet": {
+        "publishedAt": "2009-12-25T08:41:50Z",
+        "channelId": "UCJN4c_lZorb_0eyIP_tSS3A",
+        "title": "Guns N&#39; Roses - Paradise City",
+        "description": "AppetiteForDestruction: The Debut Album, Remastered and Expanded. Available now as Box Set, Super Deluxe, Double LP, and Double CD here: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Rbm6GXllBiw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Rbm6GXllBiw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Rbm6GXllBiw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GunsNRosesVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-12-25T08:41:50Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "tmXMfmJT920oxMlZqs9Y-H-m3_I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ErvgV4P6Fzc"
+      },
+      "snippet": {
+        "publishedAt": "2009-10-08T04:25:07Z",
+        "channelId": "UCJN4c_lZorb_0eyIP_tSS3A",
+        "title": "Guns N&#39; Roses - Patience",
+        "description": "AppetiteForDestruction: The Debut Album, Remastered and Expanded. Available now as Box Set, Super Deluxe, Double LP, and Double CD here: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ErvgV4P6Fzc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ErvgV4P6Fzc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ErvgV4P6Fzc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GunsNRosesVEVO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2009-10-08T04:25:07Z"
+      }
+    }
+  ]
+}
