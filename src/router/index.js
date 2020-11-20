@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import BandPage from "../views/BandPage.vue";
 
 Vue.use(VueRouter);
 
@@ -8,8 +9,15 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Home
-  }
+    component: Home,
+    children: [
+      {
+        path: "band",
+        name: "band-page",
+        component: BandPage
+      }
+    ]
+  },
 ];
 
 const router = new VueRouter({
