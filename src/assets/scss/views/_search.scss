@@ -1,0 +1,36 @@
+.search {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+
+    border: 1px solid #ccc;
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+    form {
+        display: flex;
+        width: 100%;
+    }
+}
+
+
+#app:not(.home) {
+    .search {
+        bottom: calc(100% - #{$topBarMobile});
+        .logo { 
+            display: none; 
+        }
+    }
+}
