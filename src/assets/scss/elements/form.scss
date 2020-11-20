@@ -1,0 +1,13 @@
+
+$inputHeight: $elementsBaseHeight;
+$inputBorderDefault: $grey;
+
+.input {
+    height: $inputHeight;
+    border: 1px solid $inputBorderDefault;
+    width: 100%;
+    box-sizing: border-box;
+    &.is-large {
+        font-size: 1.25rem;
+    }
+}

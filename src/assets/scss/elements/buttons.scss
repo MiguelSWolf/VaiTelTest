@@ -1,0 +1,14 @@
+$buttonHeight: $elementsBaseHeight;
+$buttonBackgroundDefault: $greyLight;
+$buttonBorderDefault: $grey;
+
+
+.button {
+    height: $buttonHeight;
+    background: $buttonBackgroundDefault;
+    border: 1px solid $buttonBorderDefault;
+    width: auto;
+    &.is-large {
+        font-size: 1.25rem;
+    }
+}
