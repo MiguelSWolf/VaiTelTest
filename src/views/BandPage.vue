@@ -1,50 +1,49 @@
 <template>
     <div class="band">
         <header>
-            <h2 class="name">{{name}}</h2>
-            <figure class="">
-                <img :src="image" />
-            </figure>
-        </header>
-        <nav class="social">
-            <template v-for="link in externalLinks">
-                <a :key="link.type" :href="link.href">
-                    {{link.type}}
-                </a>
-                <br :key="`${link.type}-br`"/>
-            </template>
-            <br />
-            <br />
-        </nav>
-        <section class="videos">
-            <div v-for="video in videos" :key="video.id.videoId">
-                <strong>Id</strong>
-                {{video.id.videoId}}<br />
-                <strong>publishedAt</strong>
-                {{video.snippet.publishedAt}}<br />
-                <strong>title</strong>
-                {{video.snippet.title}}<br />
-                <strong>description</strong>
-                {{video.snippet.description}}<br />
-                <strong>thumbnails</strong>
-                {{video.snippet.thumbnails.default}}<br />
-                <strong>channelTitle</strong>
-                {{video.snippet.channelTitle}}<br />
-                <strong>channelId</strong>
-                {{video.snippet.channelId}}<br />
-                <br />
-                <br />
+            <div class="container">
+                <h2 class="name">{{name}}</h2>
+                <figure class="figure">
+                    <img :src="image" />
+                </figure>
             </div>
-        </section>
+        </header>
+        <div class="content">
+            <div class="container">
+                <nav class="social">
+                    <icon-social 
+                        v-for="link in externalLinks" 
+                        :key="link.type" 
+                        :social="link"  
+                    />
+                    <br />
+                    <br />
+                </nav>
+                <section class="videos">
+                    <block-video 
+                        v-for="video in videos" 
+                        :key="video.videoId" 
+                        :video="video" 
+                    />
+                </section>
+            </div>
+        </div>
     </div>    
 </template>
 
 <script>
 import DataGuns from '@/assets/test-data/youtube-guns.json';
+import blockVideo from '@/components/blockVideo';
+import iconSocial from '@/components/iconSocial';
 export default {
+    components: {
+        blockVideo,
+        iconSocial
+    },
     data() {
         return {
             name: "Guns n' roses",
+            // background: "https://s1.ticketm.net/dam/a/f01/ad68066e-5401-42bb-ba79-737ca8d65f01_1352251_TABLET_LANDSCAPE_16_9.jpg",
             image: "https://s1.ticketm.net/dam/a/f01/ad68066e-5401-42bb-ba79-737ca8d65f01_1352251_RETINA_PORTRAIT_3_2.jpg",
             externalLinks: [
                 { 
@@ -84,7 +83,18 @@ export default {
         }
     },
     mounted() {
-        this.videos = DataGuns.items;
+        DataGuns.items.forEach(video => {
+            const objVideo = {
+                videoId: video.id.videoId,
+                publishedAt: video.snippet.publishedAt,
+                title: video.snippet.title,
+                description: video.snippet.description,
+                thumbnail: video.snippet.thumbnails,
+                channelTitle: video.snippet.channelTitle,   
+                channelId: video.snippet.channelId
+            }
+            this.videos.push(objVideo);
+        });;
     },
 }
 </script>
