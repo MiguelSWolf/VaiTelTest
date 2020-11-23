@@ -1,3 +1,14 @@
+@mixin tablet {
+    @media (min-width: $queryTablet) { 
+        @content; 
+    }
+}
+@mixin desktop {
+    @media (min-width: $queryDesktop) { 
+        @content; 
+    }
+}
+
 
 body {
     font-family: $textFont;
@@ -12,4 +23,20 @@ img {
 
 .container {
     padding: 0 12px;
+}
+
+@include tablet {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        width: $containerTablet;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@include desktop {
+    .container {
+        width: $containerDesktop;
+    }
 }
