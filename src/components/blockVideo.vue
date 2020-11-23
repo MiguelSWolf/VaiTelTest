@@ -2,6 +2,9 @@
   <article class="video">
     <figure class="video-thumbnail">
       <img :src="video.thumbnail.medium.url" :alt="altDescription" />
+      <div class="play-button">
+        <icon-play />
+      </div>
     </figure>
     <div class="context">
       <h2 class="video-title">{{ video.title }}</h2>
@@ -14,8 +17,10 @@
   </article>
 </template>
 <script>
+import iconPlay from "./icons/play.vue";
 export default {
   props: ["video"],
+  components: { iconPlay },
   computed: {
     altDescription: function() {
       return `Image from youtube video - ${this.video.title}`;

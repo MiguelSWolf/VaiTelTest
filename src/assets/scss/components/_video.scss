@@ -2,6 +2,27 @@
     font-size:0.625em;
     margin-bottom: 3em;
     &-thumbnail {
+        position: relative;
+        .play-button {
+            font-size: 32px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4em;
+            height: 2.2em;
+            margin-left: -2em;
+            margin-top: -1.1em;
+            color: $white;
+            background: rgba($greyDark, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $radius;
+            svg {
+                max-width: 1em;
+            }
+        }
     }
     &-title {
         font-family: $titleFont;
