@@ -1,0 +1,58 @@
+$facebookColor: #3b5999;
+$instagramColor: #ffc838;
+$itunesColor: rgb(10,132,255);
+$lastfmColor: #f1594b;
+$twitterColor: #55acef; 
+$wikiColor: #f6f6f6;
+$youtubeColor: #FF0000;
+$homepageColor: #f6f6f6;
+
+.icon-social {
+    .icon {
+        width: 2em;
+        height: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $radius;
+        color: $white;
+        svg {
+            width: 1.5em;
+        }
+    }
+    &.type-facebook .icon {
+        background: $facebookColor;
+    }
+    &.type-instagram .icon {
+        background: $instagramColor;
+    }
+    &.type-itunes .icon {
+        background: $itunesColor;
+    }
+    &.type-lastfm .icon {
+        background: $lastfmColor;
+    }
+    &.type-twitter .icon {
+        background: $twitterColor;
+    }
+    &.type-wiki .icon {
+        background: $wikiColor;
+        color: $greyDark;
+        border: 1px solid $greyDark;
+        box-sizing: border-box;
+    }
+    &.type-youtube .icon {
+        background: $youtubeColor;
+    }
+    &.type-homepage .icon {
+        background: $greyDark;
+        color: $homepageColor;
+    }
+    p {
+        display: none;
+    }
+
+    & + & {
+        margin-left: 0.5em;
+    }
+}

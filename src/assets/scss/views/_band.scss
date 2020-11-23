@@ -29,4 +29,9 @@ $figureSizeMobile: 64px;
             display: block;
         }
     }
+    .social {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.5em;
+    }
 }
