@@ -1,7 +1,8 @@
 # vaiteltest
 
 ## Vercel Preview 
-The project is sync with the platform Vercel on the master branch. Every commit that was sent to master will create a new version of the app 
+The project is sync with the platform Vercel on the master branch. Every commit that was sent to master will create a new version of the app.
+
 [Current Version](https://vai-tel-test.vercel.app/)
 
 ## Project setup
