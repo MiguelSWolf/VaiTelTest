@@ -7,7 +7,7 @@
       </div>
     </figure>
     <div class="context">
-      <h2 class="video-title">{{ video.title }}</h2>
+      <h2 class="video-title" v-html="video.title"></h2>
       <h3 class="video-channel">{{ video.channelTitle }}</h3>
       <div class="video-published">{{ publishedDate }}</div>
       <!-- <div class="description">{{ video.description }}</div> -->
