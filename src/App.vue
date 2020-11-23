@@ -9,9 +9,9 @@ export default {
     classPage: function() {
       return this.$route.name;
     }
-  },
-}
+  }
+};
 </script>
 <style lang="scss">
-  @import '@/assets/scss/index';
+@import "@/assets/scss/index";
 </style>

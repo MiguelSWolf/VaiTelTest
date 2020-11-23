@@ -17,7 +17,7 @@ const routes = [
         component: BandPage
       }
     ]
-  },
+  }
 ];
 
 const router = new VueRouter({
