@@ -1,31 +1,25 @@
 <template>
-    <div>
-        <strong>Id</strong>
-        {{ video.videoId }}
-        <br />
-        <strong>publishedAt</strong>
-        {{ video.publishedAt }}
-        <br />
-        <strong>title</strong>
-        {{ video.title }}
-        <br />
-        <strong>description</strong>
-        {{ video.description }}
-        <br />
-        <strong>thumbnails</strong>
-        {{ video.thumbnail }}
-        <br />
-        <strong>channelTitle</strong>
-        {{ video.channelTitle }}
-        <br />
-        <strong>channelId</strong>
-        {{ video.channelId }}
-        <br />
-        <br />
-    </div>
+  <article class="video">
+        <figure>
+            <img :src="video.thumbnail.medium.url" :alt="altDescription" />
+        </figure>
+        <div class="context">
+            <h2 class="video-title">{{ video.title }}</h2>
+            <h3 class="video-channel">{{ video.channelTitle }}</h3>
+            <div class="published">{{ video.publishedAt }}</div>
+            <!-- <div class="description">{{ video.description }}</div> -->
+        </div>
+        <!-- {{ video.videoId }} -->
+        <!-- {{ video.channelId }} -->
+    </article>
 </template>
 <script>
 export default {
-    props: ['video']
+    props: ['video'],
+    computed: {
+        altDescription: function() {
+            return `Image from youtube video - ${this.video.title}`
+        }
+    },
 }
 </script>
