@@ -1,11 +1,32 @@
+$figureSizeMobile: 64px;
+
 .band {
     header {
-        display: flex;
+        border-bottom: 1px solid $grey;
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+        }
     }
     .name {
-
+        font-family: $titleFont;
+        font-size: 1.5rem;
+        flex: 1 1 100%;
+        text-align: center;
+        margin: 0;
     }
     .figure {
-
+        padding-right: 0.5rem;
+        flex: 0 0 $figureSizeMobile;
+        height: $figureSizeMobile;
+        margin: 0;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
     }
 }
