@@ -13,7 +13,6 @@
       </figure>
       <p>{{ social.type }}</p>
     </a>
-    <br />
   </div>
 </template>
 <script>

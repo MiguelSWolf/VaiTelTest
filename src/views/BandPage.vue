@@ -11,6 +11,7 @@
     <div class="content">
       <div class="container">
         <nav class="social">
+          <h2>External Links</h2>
           <icon-social
             v-for="link in externalLinks"
             :key="link.type"

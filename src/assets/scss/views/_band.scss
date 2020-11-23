@@ -33,5 +33,37 @@ $figureSizeMobile: 64px;
         display: flex;
         flex-wrap: wrap;
         margin-top: 0.5em;
+        h2 {
+            display: none;
+        }
+    }
+    @include tablet {
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .videos {
+            margin-left: -12px;
+            margin-right: -12px;
+            display: flex;
+            flex-wrap: wrap;
+            .video {
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+        }
+        .social {
+            margin-top: 0;
+            border-left: 1px solid $grey;
+            border-right: 1px solid $grey;
+            flex-direction: column;
+            flex: 0 0 320px;
+            width: 320px;
+            padding: 1em;
+            box-sizing: border-box;
+            h2 {
+                display: block;
+            }
+        }
     }
 }

@@ -55,4 +55,19 @@ $homepageColor: #f6f6f6;
     & + & {
         margin-left: 0.5em;
     }
+
+    @include tablet{
+        a {
+            display: flex;
+            align-items: center;
+        }
+        p {
+            display: block;
+            margin: 0 0 0 1em;
+        }
+        & + & {
+            margin-left: 0;
+            margin-top: 0.5em;
+        }
+    }
 }
