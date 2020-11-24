@@ -15,6 +15,7 @@ export default new Vuex.Store({
     lastPage: 0,
     resultsTicketMaster: [],
     band: {
+      id: "",
       name: "",
       image: "",
       externalLinks: [],
@@ -124,7 +125,7 @@ export default new Vuex.Store({
       const selected = state.resultsTicketMaster.find(band => {
         return band.id == payload.id;
       });
-      console.log({ selected });
+      state.band.id = selected.id;
       state.band.name = selected.name;
       state.band.image = selected.images[1].url;
       state.band.externalLinks = [];
@@ -137,7 +138,7 @@ export default new Vuex.Store({
         state.band.externalLinks.push(link);
       }
       this.commit("searchYoutube", { payload: { bandName: selected.name } });
-      router.push({ name: "band-page" });
+      router.push({ name: "band-page", params: { idBand: selected.id } });
     }
   },
   actions: {

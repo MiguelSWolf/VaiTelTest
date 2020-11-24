@@ -15,7 +15,7 @@ const routes = [
     props: true,
     children: [
       {
-        path: "band",
+        path: "band/:idBand",
         name: "band-page",
         component: BandPage
       },
