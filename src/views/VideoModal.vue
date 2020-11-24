@@ -1,5 +1,5 @@
 <template>
-  <section class="modal">
+  <section class="modal" :class="classModal">
     <nav class="modal-commands">
       <div @click="shrinkModal">Shrink</div>
       <div @click="goToYoutube">External</div>
@@ -8,9 +8,9 @@
     <div class="modal-container">
       <div class="iframe">
         <iframe
-          :src="`https://www.youtube-nocookie.com/embed/${idVideo}`"
+          :src="`https://www.youtube-nocookie.com/embed/${modal.idVideo}`"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
           allowfullscreen
         ></iframe>
       </div>
@@ -18,16 +18,20 @@
   </section>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      idVideo: "Cr-SqRWImmI"
-    };
-  },
   computed: {
     youtubeUrl: function() {
       return `https://www.youtube.com/watch?v=${this.idVideo}`;
-    }
+    },
+    classModal: function() {
+      return {
+        "shrink-mode": this.modal.shrinkMode
+      };
+    },
+    ...mapState({
+      modal: state => state.modal
+    })
   },
   methods: {
     closeModal: function() {
@@ -36,7 +40,9 @@ export default {
     goToYoutube: function() {
       window.location.href = this.youtubeUrl;
     },
-    shrinkModal: function() {}
+    shrinkModal: function() {
+      this.$store.dispatch("toogleShrinkMode");
+    }
   }
 };
 </script>

@@ -167,12 +167,18 @@ export default new Vuex.Store({
       }
     },
     openModal(state, { payload }) {
+      console.log(payload);
       state.modal.show = true;
-      this.modal.shrinkMode = false;
+      state.modal.shrinkMode = false;
       state.modal.idVideo = payload.idVideo;
+      document.body.classList.add("has-modal");
     },
     closeModal(state) {
       state.modal.show = false;
+      document.body.classList.remove("has-modal");
+    },
+    toogleShrinkMode(state) {
+      state.modal.shrinkMode = !state.modal.shrinkMode;
     }
   },
   actions: {
@@ -193,6 +199,9 @@ export default new Vuex.Store({
     },
     closeModal(context) {
       context.commit("closeModal");
+    },
+    toogleShrinkMode(context) {
+      context.commit("toogleShrinkMode");
     }
   }
 });
