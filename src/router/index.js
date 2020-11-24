@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Search from "../views/Search.vue";
 import BandPage from "../views/BandPage.vue";
 import ResultsPage from "../views/Results.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -18,11 +19,16 @@ const routes = [
         component: BandPage
       },
       {
-        path: "results",
+        path: "results/:search",
         name: "results-page",
         component: ResultsPage
       }
     ]
+  },
+  {
+    path: "*",
+    name: "page-not-found",
+    component: PageNotFound
   }
 ];
 
