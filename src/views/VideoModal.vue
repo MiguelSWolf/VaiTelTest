@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     youtubeUrl: function() {
-      return `https://www.youtube.com/watch?v=${this.idVideo}`;
+      return `https://www.youtube.com/watch?v=${this.modal.idVideo}`;
     },
     classModal: function() {
       return {
