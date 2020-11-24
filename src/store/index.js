@@ -42,7 +42,8 @@ export default new Vuex.Store({
         q: payload.bandName,
         type: "video",
         videoDefinition: "high",
-        key: process.env.VUE_APP_GOOGLE_API
+        key: process.env.VUE_APP_GOOGLE_API,
+        maxResults: 12
       };
       Vue.http
         .get(url, { params })
