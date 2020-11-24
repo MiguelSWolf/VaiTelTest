@@ -4,7 +4,9 @@
     margin-bottom: 3em;
     &-thumbnail {
         position: relative;
+        cursor: pointer;
         .play-button {
+            transition: 0.3s;
             font-size: 32px;
             display: block;
             position: absolute;
@@ -27,6 +29,7 @@
         }
     }
     &-title {
+        cursor: pointer;
         font-family: $titleFont;
         font-size: 1.4em;
         line-height: 1em;
@@ -39,5 +42,10 @@
     }
     &-published {
         font-size: 1.2em;
+    }
+    &:hover {
+        .play-button {
+            transform: scale(1.2);
+        }
     }
 }
