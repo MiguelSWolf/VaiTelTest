@@ -23,36 +23,15 @@ export default {
   name: "Home",
   data() {
     return {
-      searchField: "Dua Lipa",
-      baseYoutubeAPI: "https://youtube.googleapis.com/youtube/v3/"
+      searchField: "Dua Lipa"
     };
   },
   methods: {
     onSubmit: function() {
       console.log("buscou por " + this.searchField);
-      this.searchYoutube();
+      // this.searchYoutube();
+      this.$store.dispatch("searchBand", { search: this.searchField });
       // this.$router.push({ name: "band-page" });
-    },
-    searchYoutube: function() {
-      console.log("busca youtube começou....");
-      const url = `${this.baseYoutubeAPI}search`;
-      const params = {
-        part: "snippet",
-        order: "viewCount",
-        q: this.searchField,
-        type: "video",
-        videoDefinition: "high",
-        key: process.env.VUE_APP_GOOGLE_API
-      };
-      this.$http
-        .get(url, { params })
-        .then(resource => {
-          console.log({ resource });
-        })
-        .catch(error => {
-          console.error("some error");
-          console.error({ error });
-        });
     }
   }
 };
