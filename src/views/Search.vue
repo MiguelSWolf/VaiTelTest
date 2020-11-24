@@ -8,7 +8,7 @@
             type="text"
             class="input is-large"
             v-model="searchField"
-            placeholder="Search for your favority..."
+            placeholder="Search for your favorite..."
           />
           <input type="submit" value="Search" class="button is-large" />
         </form>

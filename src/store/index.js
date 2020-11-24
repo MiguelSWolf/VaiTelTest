@@ -82,7 +82,6 @@ export default new Vuex.Store({
       Vue.http
         .get(url, { params })
         .then(resource => {
-          console.log({ resource });
           if (resource.body._embedded) {
             state.resultsTicketMaster = resource.body._embedded.attractions;
           }
@@ -167,7 +166,6 @@ export default new Vuex.Store({
       }
     },
     openModal(state, { payload }) {
-      console.log(payload);
       state.modal.show = true;
       state.modal.shrinkMode = false;
       state.modal.idVideo = payload.idVideo;
