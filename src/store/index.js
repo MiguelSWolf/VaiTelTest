@@ -77,7 +77,9 @@ export default new Vuex.Store({
         .then(resource => {
           state.resultsTicketMaster = resource.body._embedded.attractions;
           console.log({ resource });
-          router.push({ name: "results-page" });
+          if (router.history.current.name != "results-page") {
+            router.push({ name: "results-page" });
+          }
         })
         .catch(error => {
           console.error("some error");
