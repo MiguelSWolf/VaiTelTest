@@ -77,11 +77,17 @@ export default new Vuex.Store({
       Vue.http
         .get(url, { params })
         .then(resource => {
-          state.resultsTicketMaster = resource.body._embedded.attractions;
+          console.log({ resource });
+          if (resource.body._embedded) {
+            state.resultsTicketMaster = resource.body._embedded.attractions;
+          }
           state.resultsTotal = resource.body.page.totalElements;
           state.currentPage = resource.body.page.number;
           state.lastPage = resource.body.page.totalPages;
-          if (router.history.current.name != "results-page") {
+          if (
+            router.history.current.name != "results-page" ||
+            router.history.current.params.search != state.searchField
+          ) {
             router.push({
               name: "results-page",
               params: { search: state.searchField }
