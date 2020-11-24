@@ -8,7 +8,12 @@
     <div class="container">
       <item-result :item="result" v-for="result in list" :key="result.id" />
 
-      <button type="button" class="button" @click.prevent="moreResults">
+      <button
+        type="button"
+        class="button"
+        @click.prevent="moreResults"
+        v-if="currentPage < lastPage - 1"
+      >
         More Results...
       </button>
     </div>
@@ -26,7 +31,9 @@ export default {
   computed: mapState({
     list: state => state.resultsTicketMaster,
     searchField: state => state.searchField,
-    resultsTotal: state => state.resultsTotal
+    resultsTotal: state => state.resultsTotal,
+    currentPage: state => state.currentPage,
+    lastPage: state => state.lastPage
   }),
   methods: {
     moreResults: function() {
