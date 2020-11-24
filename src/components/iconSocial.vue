@@ -1,5 +1,5 @@
 <template>
-  <div :class="classIcon">
+  <div :class="classIcon" v-if="canShow">
     <a :href="social.href" :title="social.type">
       <figure>
         <icon-facebook v-if="social.type == 'facebook'" />
@@ -9,7 +9,7 @@
         <icon-twitter v-else-if="social.type == 'twitter'" />
         <icon-wikipedia v-else-if="social.type == 'wiki'" />
         <icon-youtube v-else-if="social.type == 'youtube'" />
-        <icon-globe v-else />
+        <icon-globe v-else-if="social.type == 'homepage'" />
       </figure>
       <p>{{ social.type }}</p>
     </a>
@@ -39,6 +39,13 @@ export default {
   computed: {
     classIcon: function() {
       return `icon-social type-${this.social.type}`;
+    },
+    canShow: function() {
+      const er = /(facebook|instagram|itunes|lastfm|twitter|wiki|youtube|homepage)/;
+      if (er.test(this.social.type)) {
+        return true;
+      }
+      return false;
     }
   }
 };

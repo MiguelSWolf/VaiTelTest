@@ -9,7 +9,10 @@
     }
 }
 
-
+html, body, #app, .wrapper {
+    height: 100%;
+    box-sizing: border-box;
+}
 body {
     font-family: $textFont;
     font-size: 16px;
@@ -26,7 +29,7 @@ img {
 }
 
 @include tablet {
-    .container {
+    .container, .content {
         padding-left: 0;
         padding-right: 0;
         width: $containerTablet;
@@ -36,7 +39,7 @@ img {
 }
 
 @include desktop {
-    .container {
+    .container, .content {
         width: $containerDesktop;
     }
 }

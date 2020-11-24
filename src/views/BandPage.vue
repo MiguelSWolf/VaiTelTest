@@ -9,18 +9,19 @@
       </div>
     </header>
     <div class="content">
-      <div class="container">
-        <nav class="social">
+      <nav class="social">
+        <div class="container">
           <h2>External Links</h2>
           <icon-social
             v-for="link in band.externalLinks"
             :key="link.type"
             :social="link"
           />
-          <br />
-          <br />
-        </nav>
+        </div>
+      </nav>
+      <div class="container">
         <section class="videos">
+          <h2>Videos</h2>
           <block-video
             v-for="video in band.videos"
             :key="video.videoId"
