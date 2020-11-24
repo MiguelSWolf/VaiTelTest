@@ -8,6 +8,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    modal: {
+      show: false,
+      shrinkMode: false,
+      idVideo: ""
+    },
     loading: false,
     searchField: "",
     resultsTotal: 0,
@@ -160,6 +165,14 @@ export default new Vuex.Store({
       if (router.history.current.name != "band-page") {
         router.push({ name: "band-page", params: { idBand: selected.id } });
       }
+    },
+    openModal(state, { payload }) {
+      state.modal.show = true;
+      this.modal.shrinkMode = false;
+      state.modal.idVideo = payload.idVideo;
+    },
+    closeModal(state) {
+      state.modal.show = false;
     }
   },
   actions: {
@@ -174,6 +187,12 @@ export default new Vuex.Store({
     },
     getBandById(context, payload) {
       context.commit("getBandById", { payload });
+    },
+    openModal(context, payload) {
+      context.commit("openModal", { payload });
+    },
+    closeModal(context) {
+      context.commit("closeModal");
     }
   }
 });

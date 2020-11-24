@@ -24,9 +24,18 @@ export default {
       idVideo: "Cr-SqRWImmI"
     };
   },
+  computed: {
+    youtubeUrl: function() {
+      return `https://www.youtube.com/watch?v=${this.idVideo}`;
+    }
+  },
   methods: {
-    closeModal: function() {},
-    goToYoutube: function() {},
+    closeModal: function() {
+      this.$store.dispatch("closeModal");
+    },
+    goToYoutube: function() {
+      window.location.href = this.youtubeUrl;
+    },
     shrinkModal: function() {}
   }
 };

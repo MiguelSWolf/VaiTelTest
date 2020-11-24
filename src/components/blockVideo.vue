@@ -1,6 +1,6 @@
 <template>
   <article class="video">
-    <figure class="video-thumbnail">
+    <figure class="video-thumbnail" @click="watchVideo">
       <img :src="video.thumbnail.medium.url" :alt="altDescription" />
       <div class="play-button">
         <icon-play />
@@ -32,6 +32,11 @@ export default {
         options
       );
       return `Published on ${dateStr}`;
+    }
+  },
+  methods: {
+    watchVideo: function() {
+      this.$store.dispatch("openModal", { idVideo: this.video.videoId });
     }
   }
 };

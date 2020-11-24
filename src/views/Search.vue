@@ -15,7 +15,7 @@
       </div>
     </div>
     <router-view />
-    <video-modal />
+    <video-modal v-if="showModal" />
   </div>
 </template>
 
@@ -31,6 +31,11 @@ export default {
     return {
       searchField: ""
     };
+  },
+  computed: {
+    showModal: function() {
+      return this.$store.state.modal.show;
+    }
   },
   methods: {
     onSubmit: function() {
