@@ -14,6 +14,7 @@ $greyLight:  rgb(240,240,240);
 $grey:  rgb(95,95,95);
 $greyDark:  rgb(36,36,36);
 $blue: #3454D1;
+$blueLight: lighten($blue, 30);
 
 $topBarMobile: 80px;
 
