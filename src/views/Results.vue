@@ -19,6 +19,7 @@ import ItemResult from "../components/itemResult.vue";
 import { mapState } from "vuex";
 
 export default {
+  props: ["search"],
   components: {
     ItemResult
   },
@@ -31,6 +32,11 @@ export default {
     moreResults: function() {
       console.log("more results");
       this.$store.dispatch("getNextPageTicketMaster");
+    }
+  },
+  mounted() {
+    if (this.list.length == 0) {
+      this.$store.dispatch("searchBand", { search: this.search });
     }
   }
 };

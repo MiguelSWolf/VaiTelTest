@@ -21,9 +21,10 @@
 <script>
 export default {
   name: "Home",
+  props: ["search"],
   data() {
     return {
-      searchField: "Dua Lipa"
+      searchField: ""
     };
   },
   methods: {
@@ -32,6 +33,11 @@ export default {
       // this.searchYoutube();
       this.$store.dispatch("searchBand", { search: this.searchField });
       // this.$router.push({ name: "band-page" });
+    }
+  },
+  mounted() {
+    if (this.search) {
+      this.searchField = this.search;
     }
   }
 };

@@ -12,6 +12,7 @@ const routes = [
     path: "/",
     name: "home",
     component: Search,
+    props: true,
     children: [
       {
         path: "band",
@@ -21,7 +22,8 @@ const routes = [
       {
         path: "results/:search",
         name: "results-page",
-        component: ResultsPage
+        component: ResultsPage,
+        props: true
       }
     ]
   },

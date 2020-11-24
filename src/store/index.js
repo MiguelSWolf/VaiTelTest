@@ -24,6 +24,7 @@ export default new Vuex.Store({
   mutations: {
     searchBand(state, { payload }) {
       console.log("searchBand");
+      console.log({ payload });
       state.searchField = payload.search;
       this.commit("searchTicketMaster");
     },
@@ -86,7 +87,10 @@ export default new Vuex.Store({
           state.lastPage = resource.body.page.totalPages;
           console.log({ results: resource.body });
           if (router.history.current.name != "results-page") {
-            router.push({ name: "results-page" });
+            router.push({
+              name: "results-page",
+              params: { search: state.searchField }
+            });
           }
         })
         .catch(error => {
