@@ -29,10 +29,7 @@ export default {
   },
   methods: {
     onSubmit: function() {
-      console.log("buscou por " + this.searchField);
-      // this.searchYoutube();
       this.$store.dispatch("searchBand", { search: this.searchField });
-      // this.$router.push({ name: "band-page" });
     }
   },
   mounted() {

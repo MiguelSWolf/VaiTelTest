@@ -24,13 +24,10 @@ export default new Vuex.Store({
   },
   mutations: {
     searchBand(state, { payload }) {
-      console.log("searchBand");
-      console.log({ payload });
       state.searchField = payload.search;
       this.commit("searchTicketMaster");
     },
     searchYoutube(state, { payload }) {
-      console.log("busca youtube começou....");
       state.band.videos = [];
       const baseYoutubeAPI = "https://youtube.googleapis.com/youtube/v3/";
       const url = `${baseYoutubeAPI}search`;
@@ -46,7 +43,6 @@ export default new Vuex.Store({
         .get(url, { params })
         .then(resource => {
           state.band.videos = [];
-          console.log({ videos: resource.body.items });
           resource.body.items.forEach(video => {
             this.commit("addVideo", { payload: { ...video } });
           });
@@ -69,7 +65,6 @@ export default new Vuex.Store({
       state.band.videos.push(objVideo);
     },
     searchTicketMaster(state) {
-      console.log("busca ticketMaster começou....");
       state.resultsTicketMaster = [];
       const baseTicketMasterAPI = "https://app.ticketmaster.com/discovery/v2/";
       const url = `${baseTicketMasterAPI}attractions.json`;
@@ -86,7 +81,6 @@ export default new Vuex.Store({
           state.resultsTotal = resource.body.page.totalElements;
           state.currentPage = resource.body.page.number;
           state.lastPage = resource.body.page.totalPages;
-          console.log({ results: resource.body });
           if (router.history.current.name != "results-page") {
             router.push({
               name: "results-page",
@@ -123,7 +117,6 @@ export default new Vuex.Store({
     },
     getBandById(state, { payload }) {
       state.resultsTicketMaster = [];
-      console.log({ fromID: payload });
       const baseTicketMasterAPI = "https://app.ticketmaster.com/discovery/v2/";
       const url = `${baseTicketMasterAPI}attractions/${payload.idBand}.json`;
       const params = {

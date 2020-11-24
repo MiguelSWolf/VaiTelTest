@@ -30,7 +30,6 @@ export default {
   }),
   methods: {
     moreResults: function() {
-      console.log("more results");
       this.$store.dispatch("getNextPageTicketMaster");
     }
   },
