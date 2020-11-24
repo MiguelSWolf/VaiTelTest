@@ -10,7 +10,7 @@
             v-model="searchField"
             placeholder="Search for your favority..."
           />
-          <input type="submit" value="search" class="button is-large" />
+          <input type="submit" value="Search" class="button is-large" />
         </form>
       </div>
     </div>

@@ -5,7 +5,12 @@ $timeAnimation: 0.7s;
     bottom: 0%;
     left: 0;
     right: 0;
+    background-image: linear-gradient(rgba(0,0,0, .5) 0%, rgba(0,0,0, .5) 100%),
+                      url('https://elitecanudos.com.br/wp-content/uploads/2018/09/elite-seguimentos-show.jpg')
+                      ;
     background-color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
     transition: $timeAnimation linear bottom;
     border: 1px solid #ccc;
 
@@ -19,6 +24,7 @@ $timeAnimation: 0.7s;
     .logo {
         margin: 0;
         height: 70px;
+        color: $white;
         box-sizing: border-box;
         overflow: hidden;
         transition-property: opacity, height, padding-bottom;
@@ -30,9 +36,19 @@ $timeAnimation: 0.7s;
     form {
         display: flex;
         width: 100%;
+        justify-content: space-between;
+    }
+    .input {
+        width: calc(100% - 100px);
+        margin-right: 0.5em;
     }
 }
 
+.home .search {
+    .container {
+        max-width: 800px;
+    }
+}
 
 #app:not(.home) {
     .search {
@@ -42,5 +58,11 @@ $timeAnimation: 0.7s;
             height: 0px;
             opacity: 0;
         }
+    }
+}
+
+@include tablet {
+    .search .button {
+        width: 180px;
     }
 }

@@ -1,13 +1,17 @@
 $buttonHeight: $elementsBaseHeight;
-$buttonBackgroundDefault: $greyLight;
+$buttonBackgroundDefault: $blue;
 $buttonBorderDefault: $grey;
 
 
 .button {
     height: $buttonHeight;
     background: $buttonBackgroundDefault;
-    border: 1px solid $buttonBorderDefault;
+    border: none;
+    color: $white;
     width: auto;
+    box-sizing: border-box;
+    border-radius: $radius * 2;
+    font-family: $titleFont;
     &.is-large {
         font-size: 1.25rem;
     }

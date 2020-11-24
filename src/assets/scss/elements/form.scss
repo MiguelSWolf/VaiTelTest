@@ -7,6 +7,8 @@ $inputBorderDefault: $grey;
     border: 1px solid $inputBorderDefault;
     width: 100%;
     box-sizing: border-box;
+    border-radius: $radius * 2;
+    padding: 0.25em;
     &.is-large {
         font-size: 1.25rem;
     }
