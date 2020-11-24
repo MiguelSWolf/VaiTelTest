@@ -11,6 +11,22 @@ $heightPlayerShrink: 220px;
         color: #fff;
         display: flex;
         justify-content: flex-end;
+        padding: .25em 1em;
+        .icon {
+            cursor: pointer;
+            width: 1.25em;
+            height: 1.25em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        div + div {
+            margin-left: 0.5em;
+        }
     }
     .modal-container {
         width: 100%;
