@@ -36,6 +36,7 @@ $heightPlayerShrink: 240px;
         justify-content: center;
         align-items: center;
         padding-top: 50px;
+        max-width: 360px;
     }
     .iframe {
         width: 100%;
@@ -57,7 +58,25 @@ $heightPlayerShrink: 240px;
             padding-top: 0.5rem;
         }
     }
+    @include tablet {
+        .modal-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        &.shrink-mode {
+            top: calc(100% - #{$heightPlayerShrink} - 2em);
+            left: calc(100% - #{$widthPlayerShrink} - 2em);
+            .modal-container {
+                padding: 1em;
+                box-sizing: border-box;
+            }
+
+        }
+    }
 }
 .has-modal {
     padding-bottom: $heightPlayerShrink;
+    @include tablet {
+        padding-bottom: 0;
+    }
 }
