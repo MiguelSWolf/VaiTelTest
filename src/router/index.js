@@ -17,7 +17,8 @@ const routes = [
       {
         path: "band/:idBand",
         name: "band-page",
-        component: BandPage
+        component: BandPage,
+        props: true
       },
       {
         path: "results/:search",

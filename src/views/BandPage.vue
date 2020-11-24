@@ -36,6 +36,7 @@
 import blockVideo from "@/components/blockVideo";
 import iconSocial from "@/components/iconSocial";
 export default {
+  props: ["idBand"],
   components: {
     blockVideo,
     iconSocial
@@ -43,6 +44,11 @@ export default {
   computed: {
     band: function() {
       return this.$store.state.band;
+    }
+  },
+  mounted() {
+    if (this.band.name == "") {
+      this.$store.dispatch("getBandById", { idBand: this.idBand });
     }
   }
 };

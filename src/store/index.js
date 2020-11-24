@@ -121,6 +121,26 @@ export default new Vuex.Store({
           console.error({ error });
         });
     },
+    getBandById(state, { payload }) {
+      state.resultsTicketMaster = [];
+      console.log({ fromID: payload });
+      const baseTicketMasterAPI = "https://app.ticketmaster.com/discovery/v2/";
+      const url = `${baseTicketMasterAPI}attractions/${payload.idBand}.json`;
+      const params = {
+        apikey: process.env.VUE_APP_TICKETMASTER_API
+      };
+      Vue.http
+        .get(url, { params })
+        .then(resource => {
+          state.resultsTicketMaster = [];
+          state.resultsTicketMaster.push(resource.body);
+          this.commit("selectedBand", { payload: { id: payload.idBand } });
+        })
+        .catch(error => {
+          console.error("some error");
+          console.error({ error });
+        });
+    },
     selectedBand(state, { payload }) {
       const selected = state.resultsTicketMaster.find(band => {
         return band.id == payload.id;
@@ -138,7 +158,9 @@ export default new Vuex.Store({
         state.band.externalLinks.push(link);
       }
       this.commit("searchYoutube", { payload: { bandName: selected.name } });
-      router.push({ name: "band-page", params: { idBand: selected.id } });
+      if (router.history.current.name != "band-page") {
+        router.push({ name: "band-page", params: { idBand: selected.id } });
+      }
     }
   },
   actions: {
@@ -150,6 +172,9 @@ export default new Vuex.Store({
     },
     getNextPageTicketMaster(context) {
       context.commit("getNextPageTicketMaster");
+    },
+    getBandById(context, payload) {
+      context.commit("getBandById", { payload });
     }
   }
 });
