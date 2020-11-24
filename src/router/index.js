@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Search from "../views/Search.vue";
 import BandPage from "../views/BandPage.vue";
+import ResultsPage from "../views/Results.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
         path: "band",
         name: "band-page",
         component: BandPage
+      },
+      {
+        path: "results",
+        name: "results-page",
+        component: ResultsPage
       }
     ]
   }
