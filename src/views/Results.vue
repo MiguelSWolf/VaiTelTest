@@ -1,20 +1,17 @@
 <template>
   <section>
-    <article v-for="result in list" :key="result.id" @click="goTo(result.id)">
-      {{ result.name }}
-    </article>
+    <item-result :item="result" v-for="result in list" :key="result.id" />
   </section>
 </template>
 <script>
+import ItemResult from "../components/itemResult.vue";
 export default {
+  components: {
+    ItemResult
+  },
   computed: {
     list: function() {
       return this.$store.state.resultsTicketMaster;
-    }
-  },
-  methods: {
-    goTo: function(id) {
-      this.$store.dispatch("selectedBand", { id });
     }
   }
 };
