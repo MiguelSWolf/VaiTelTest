@@ -1,11 +1,12 @@
+$timeAnimation: 0.7s;
 .search {
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 0%;
     left: 0;
     right: 0;
     background-color: $white;
-
+    transition: $timeAnimation linear bottom;
     border: 1px solid #ccc;
 
     .container {
@@ -17,6 +18,13 @@
     }
     .logo {
         margin: 0;
+        height: 70px;
+        box-sizing: border-box;
+        overflow: hidden;
+        transition-property: opacity, height, padding-bottom;
+        transition-delay: 0s, $timeAnimation/2, $timeAnimation/2;
+        transition-timing-function: linear;
+        transition-duration: $timeAnimation, $timeAnimation/2, $timeAnimation/2;
         padding-bottom: 2rem;
     }
     form {
@@ -30,7 +38,9 @@
     .search {
         bottom: calc(100% - #{$topBarMobile});
         .logo { 
-            display: none; 
+            padding-bottom: 0;
+            height: 0px;
+            opacity: 0;
         }
     }
 }
