@@ -91,13 +91,13 @@ export default new Vuex.Store({
       console.log({ selected });
       state.band.name = selected.name;
       state.band.image = selected.images[1].url;
+      state.band.externalLinks = [];
       for (const type in selected.externalLinks) {
         const url = selected.externalLinks[type][0].url;
         const link = {
           href: url,
           type: type
         };
-        console.log({ link });
         state.band.externalLinks.push(link);
       }
       this.commit("searchYoutube", { payload: { bandName: selected.name } });
