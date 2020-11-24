@@ -10,6 +10,9 @@ export default new Vuex.Store({
   state: {
     loading: false,
     searchField: "",
+    resultsTotal: 0,
+    currentPage: 0,
+    lastPage: 0,
     resultsTicketMaster: [],
     band: {
       name: "",
@@ -70,16 +73,43 @@ export default new Vuex.Store({
       const url = `${baseTicketMasterAPI}attractions.json`;
       const params = {
         apikey: process.env.VUE_APP_TICKETMASTER_API,
-        keyword: state.searchField
+        keyword: state.searchField,
+        size: 20,
+        page: 0
       };
       Vue.http
         .get(url, { params })
         .then(resource => {
           state.resultsTicketMaster = resource.body._embedded.attractions;
-          console.log({ resource });
+          state.resultsTotal = resource.body.page.totalElements;
+          state.currentPage = resource.body.page.number;
+          state.lastPage = resource.body.page.totalPages;
+          console.log({ results: resource.body });
           if (router.history.current.name != "results-page") {
             router.push({ name: "results-page" });
           }
+        })
+        .catch(error => {
+          console.error("some error");
+          console.error({ error });
+        });
+    },
+    getNextPageTicketMaster(state) {
+      const baseTicketMasterAPI = "https://app.ticketmaster.com/discovery/v2/";
+      const url = `${baseTicketMasterAPI}attractions.json`;
+      const params = {
+        apikey: process.env.VUE_APP_TICKETMASTER_API,
+        keyword: state.searchField,
+        size: 20,
+        page: state.currentPage + 1
+      };
+      Vue.http
+        .get(url, { params })
+        .then(resource => {
+          resource.body._embedded.attractions.forEach(attraction => {
+            state.resultsTicketMaster.push(attraction);
+          });
+          state.currentPage = resource.body.page.number;
         })
         .catch(error => {
           console.error("some error");
@@ -112,6 +142,9 @@ export default new Vuex.Store({
     },
     selectedBand(context, payload) {
       context.commit("selectedBand", { payload });
+    },
+    getNextPageTicketMaster(context) {
+      context.commit("getNextPageTicketMaster");
     }
   }
 });
