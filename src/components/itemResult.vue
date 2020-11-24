@@ -3,8 +3,10 @@
     <figure>
       <img :src="thumbnail" :alt="`Picture from ${item.name}`" />
     </figure>
-    {{ item.name }}
-    {{ genre }}
+    <div class="content">
+      <h3>{{ item.name }}</h3>
+      <h4>{{ genre }}</h4>
+    </div>
   </article>
 </template>
 <script>

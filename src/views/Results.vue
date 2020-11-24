@@ -1,6 +1,8 @@
 <template>
-  <section>
-    <item-result :item="result" v-for="result in list" :key="result.id" />
+  <section class="results">
+    <div class="container">
+      <item-result :item="result" v-for="result in list" :key="result.id" />
+    </div>
   </section>
 </template>
 <script>
