@@ -15,13 +15,18 @@
       </div>
     </div>
     <router-view />
+    <video-modal />
   </div>
 </template>
 
 <script>
+import videoModal from "./VideoModal";
 export default {
   name: "Home",
   props: ["search"],
+  components: {
+    videoModal
+  },
   data() {
     return {
       searchField: ""
